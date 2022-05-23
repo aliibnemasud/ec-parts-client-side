@@ -4,7 +4,7 @@ import PrimaryBtn from '../Shared/Buttons/PrimaryBtn';
 
 const Banner = () => {
     return (
-        <div class="hero mt-32">
+        <div class="hero my-32">
             <div class="hero-content flex-col lg:flex-row-reverse">
                 <img className='ml-10 max-w-lg' src={Cycle} />
                 <div>
