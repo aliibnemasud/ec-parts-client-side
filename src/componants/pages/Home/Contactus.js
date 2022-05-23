@@ -33,7 +33,7 @@ const Contactus = () => {
                                 <textarea class="textarea textarea-bordered" placeholder="Message"></textarea>                             
                             </div>
                             <div class="form-control mt-6">
-                                <button class="btn btn-primary">Login</button>
+                                <button class="btn btn-primary text-white">Sent</button>
                             </div>
                         </div>
                     </div>

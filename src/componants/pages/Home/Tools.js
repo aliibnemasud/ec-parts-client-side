@@ -24,8 +24,7 @@ const Tools = () => {
            </div>
            <div className="my-10 text-center">
            <PrimaryBtn>Load More</PrimaryBtn>
-           </div>
-           
+           </div>           
         </div>
     );
 };
