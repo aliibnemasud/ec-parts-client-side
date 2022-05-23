@@ -1,0 +1,30 @@
+[
+    {
+        "_id": "1",
+        "name": "Chainwheels",
+        "price": "389",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae magnam corrupti dolorum, perferendis eligendi natus mollitia dignissimos delectus aut et?",
+        "img": "https://i.ibb.co/JFqYvmz/ENERGY-MODULAR-CRANKSET-1.png"
+    },
+    {
+        "_id": "2",
+        "name": "BICYCLE BELL",
+        "price": "99",
+        "desc": "Light weight & economy bell at 14g for 22.2mm size",
+        "img": "https://i.ibb.co/t8tR0wQ/BBS-011.png"
+    },
+    {
+        "_id": "3",
+        "name": "BICYCLE E-FRAMES",
+        "price": "599",
+        "desc": "carbon suspension E-frame for Shimano E8000 (battery Shimano E8035), maxi. tire 29*2.35”, 27.5”*2.8” ",
+        "img": "https://i.ibb.co/dBQ6wZG/ff-1.png"
+    },
+    {
+        "_id": "4",
+        "name": "BICYCLE FRONT FORKS",
+        "price": "459",
+        "desc": "700c cyclocross alloy fork with V-brake pivot, integrated design N45mm",
+        "img": "https://i.ibb.co/2hjcvTT/fca-802-b.png"
+    }
+]
