@@ -13,8 +13,7 @@ const Navbar = () => {
     const menu =
         <>
             <li><CustomLink to="/">Home</CustomLink></li>
-            <li><CustomLink to="/blog">Blog</CustomLink></li>       
-
+            <li><CustomLink to="/blog">Blog</CustomLink></li>
         </>
     return (
 
