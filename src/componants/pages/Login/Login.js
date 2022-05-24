@@ -1,8 +1,35 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useRef } from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import SocialLogin from './SocialLogin';
 
 const Login = () => {
+    const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
+
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
+    const navigate = useNavigate();
+
+    if (loading) {
+        return <button class="btn btn-square loading"></button>
+    }
+
+    let loginError;
+
+    if(error){
+        
+        loginError = <p className=' text-red-600'>{error?.message}</p>
+    }    
+
+    const handleLogin = e => {
+        e.preventDefault();
+        const email = emailRef.current.value;
+       const password = passwordRef.current.value;
+       signInWithEmailAndPassword(email, password)
+       
+    }
+
     
     return (
         <div className='max-w-7xl mx-auto my-32'>
@@ -15,15 +42,18 @@ const Login = () => {
 
                 <p></p>
                 <div className='flex-1'>
-                    <form action="">
-                        <input type="email" placeholder="Email" class="input input-bordered w-full max-w-xs mb-4" /> <br />
-                        <input type="password" placeholder="Password" class="input input-bordered w-full max-w-xs mb-4" /> <br />
-                        <input type="submit" value="Login" class="input text-white input-bordered btn-primary w-full max-w-xs mb-4" /> <br />
+                    <form onSubmit={handleLogin}>
+                        <input ref={emailRef} type="email" placeholder="Email" className="input input-bordered w-full max-w-xs mb-4" required /> <br />
+                        <input ref={passwordRef} type="password" placeholder="Password" className="input input-bordered w-full max-w-xs mb-4" required /> <br />
+                        <input type="submit" value="Login" className="input text-white input-bordered btn-primary w-full max-w-xs mb-4" /><br />
+                        
+                        {loginError}
+
                         <label>
                             Don't have an account? <Link to="/signup" className='text-primary'>Sign Up</Link>
                         </label>
                     </form>
-                    <div class="divider w-80">OR</div>
+                    <div className="divider w-80">OR</div>
                     <SocialLogin></SocialLogin>
                 </div>
             </div>

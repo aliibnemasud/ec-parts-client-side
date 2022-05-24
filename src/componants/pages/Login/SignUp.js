@@ -22,7 +22,6 @@ const SignUp = () => {
        const password = passwordRef.current.value;
        // console.log(email, password)
        createUserWithEmailAndPassword(email, password);
-       navigate('/')
        
    }
 
@@ -39,14 +38,14 @@ const SignUp = () => {
                 <p></p>
                 <div className='flex-1'>
                     <form onSubmit={handCreateAccount}>
-                        <input ref={emailRef} type="email" placeholder="Email" class="input input-bordered w-full max-w-xs mb-4" /> <br />
-                        <input ref={passwordRef} type="password" placeholder="Password" class="input input-bordered w-full max-w-xs mb-4" /> <br />
-                        <input type="submit" value="Login" class="input text-white input-bordered btn-primary w-full max-w-xs mb-4" /> <br />
+                        <input ref={emailRef} type="email" placeholder="Email" className="input input-bordered w-full max-w-xs mb-4" required /> <br />
+                        <input ref={passwordRef} type="password" placeholder="Password" className="input input-bordered w-full max-w-xs mb-4" required /> <br />
+                        <input type="submit" value="Sign Up" className="input text-white input-bordered btn-primary w-full max-w-xs mb-4" /> <br />
                         <label>
                             Already have an account? <Link to="/login" className='text-primary'>Login</Link>
                         </label>
                     </form>
-                    <div class="divider w-80">OR</div>
+                    <div className="divider w-80">OR</div>
                     <SocialLogin></SocialLogin>
                 </div>
             </div>

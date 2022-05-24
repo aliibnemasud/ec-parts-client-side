@@ -9,14 +9,14 @@ const Tool = ({tool}) => {
         navigate(`/tools/${_id}`)
     }
     return (
-        <div class="card card-side bg-base-100 shadow-xl">
+        <div className="card card-side bg-base-100 shadow-xl">
             <figure><img src={tool.img} className="ml-4 w-auto" /></figure>
-            <div class="card-body">
-                <h2 class="card-title uppercase">{tool?.name}</h2>
+            <div className="card-body">
+                <h2 className="card-title uppercase">{tool?.name}</h2>
                 <p>Description: {tool?.desc}</p>
                 <h3 className='text-2xl text-primary'>Price: ${tool?.price}</h3>
-                <div class="card-actions justify-end">
-                    <button onClick={() => navigateToToolsdetails(tool._id)} class="btn btn-primary">See Details</button>
+                <div className="card-actions justify-end">
+                    <button onClick={() => navigateToToolsdetails(tool._id)} className="btn btn-primary">See Details</button>
                 </div>
             </div>
         </div>
