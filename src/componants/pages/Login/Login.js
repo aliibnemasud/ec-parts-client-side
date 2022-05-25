@@ -12,7 +12,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     if (loading) {
-        return <button class="btn btn-square loading"></button>
+        return <button className="btn btn-square loading"></button>
     }
 
     let loginError;

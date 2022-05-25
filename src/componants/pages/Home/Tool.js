@@ -16,7 +16,7 @@ const Tool = ({tool}) => {
                 <p>Description: {tool?.desc}</p>
                 <h3 className='text-2xl text-primary'>Price: ${tool?.price}</h3>
                 <div className="card-actions justify-end">
-                    <button onClick={() => navigateToToolsdetails(tool._id)} className="btn btn-primary">See Details</button>
+                    <button onClick={() => navigateToToolsdetails(tool._id)} className="btn btn-primary text-white">Order Now</button>
                 </div>
             </div>
         </div>
