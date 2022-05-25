@@ -10,7 +10,9 @@ import Tooldetails from './componants/pages/Home/Tooldetails';
 import Dashboard from './componants/pages/Dashboard/Dashboard';
 import MyOrder from './componants/pages/Dashboard/MyOrder';
 import MyReview from './componants/pages/Dashboard/MyReview';
+import Myprofile from './componants/pages/Dashboard/Myprofile';
 import RequireAuth from './componants/pages/Shared/RequireAuth/RequireAuth';
+import Error from './componants/pages/404/Error';
 
 
 function App() {
@@ -27,10 +29,15 @@ function App() {
         <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<MyOrder></MyOrder>} ></Route>
           <Route path='myreview' element={<MyReview></MyReview>} ></Route>
+          <Route path='myprofile' element={ <Myprofile></Myprofile>} ></Route>
         </Route>
 
         <Route path='/tools/:toolsid' element={<RequireAuth><Tooldetails></Tooldetails></RequireAuth>}></Route>
+
+        <Route path='*' element={<Error></Error>}></Route>
       </Routes>
+
+      
 
       <Footer></Footer>
     </div>
