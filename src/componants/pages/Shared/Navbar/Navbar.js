@@ -14,6 +14,9 @@ const Navbar = () => {
         <>
             <li><CustomLink to="/">Home</CustomLink></li>
             <li><CustomLink to="/blog">Blog</CustomLink></li>
+            {
+                user?.uid ? <li><CustomLink to="/dashboard">Dashboard</CustomLink></li> : ''
+            }
         </>
     return (
 
