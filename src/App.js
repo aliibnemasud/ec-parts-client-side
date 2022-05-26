@@ -13,6 +13,8 @@ import MyReview from './componants/pages/Dashboard/MyReview';
 import Myprofile from './componants/pages/Dashboard/Myprofile';
 import RequireAuth from './componants/pages/Shared/RequireAuth/RequireAuth';
 import Error from './componants/pages/404/Error';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -36,6 +38,7 @@ function App() {
 
         <Route path='*' element={<Error></Error>}></Route>
       </Routes>
+      <ToastContainer />
 
       
 
