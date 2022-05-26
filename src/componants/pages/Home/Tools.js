@@ -4,8 +4,8 @@ import Tool from './Tool';
 
 
 const Tools = () => {
-    const [tools, setTools] = useState([]);
-    
+
+    const [tools, setTools] = useState([]);    
     useEffect(()=> {
         fetch('http://localhost:5000/tools')
         .then(res => res.json())

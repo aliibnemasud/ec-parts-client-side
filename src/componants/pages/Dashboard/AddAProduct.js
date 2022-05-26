@@ -43,12 +43,12 @@ const AddAProduct = () => {
             <h1 className='text-3xl uppercase my-4 font-bold'>Add New Product</h1>
 
             <form onSubmit={handleAddPoduct} className="text-center mt-20">
-                <input type="text" ref={nameRef} placeholder="Product Name" class="mb-3 input input-bordered w-full max-w-xs" required/> <br />
-                <input type="number" ref={priceRef} placeholder="Price" class="mb-3 input input-bordered w-full max-w-xs" required/> <br />
-                <input type="number" ref={stockRef} placeholder="Stock" class="mb-3 input input-bordered w-full max-w-xs" required/> <br />                
-                <textarea type="text" ref={toolsDescRef} placeholder="Product description" class="mb-3 textarea textarea-bordered w-full max-w-xs" /> <br />
-                <input type="text" ref={imageRef} placeholder="Product image link" class="mb-3 input input-bordered w-full max-w-xs" required/> <br />
-                <input type="submit" value="Add Product" placeholder="Product image link" class="btn btn-primary w-full max-w-xs" />
+                <input type="text" ref={nameRef} placeholder="Product Name" className="mb-3 input input-bordered w-full max-w-xs" required/> <br />
+                <input type="number" ref={priceRef} placeholder="Price" className="mb-3 input input-bordered w-full max-w-xs" required/> <br />
+                <input type="number" ref={stockRef} placeholder="Stock" className="mb-3 input input-bordered w-full max-w-xs" required/> <br />                
+                <textarea type="text" ref={toolsDescRef} placeholder="Product description" className="mb-3 textarea textarea-bordered w-full max-w-xs" /> <br />
+                <input type="text" ref={imageRef} placeholder="Product image link" className="mb-3 input input-bordered w-full max-w-xs" required/> <br />
+                <input type="submit" value="Add Product" placeholder="Product image link" className="btn btn-primary w-full max-w-xs" />
             </form>
 
         </div>

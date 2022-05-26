@@ -18,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import ManageUser from './componants/pages/Dashboard/ManageUser';
 import ManageAllOrders from './componants/pages/Dashboard/ManageAllOrders';
 import AddAProduct from './componants/pages/Dashboard/AddAProduct';
+import Manageproduct from './componants/pages/Dashboard/Manageproduct';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path='manageuser' element={ <ManageUser></ManageUser>} ></Route>
           <Route path='manageallorders' element={ <ManageAllOrders></ManageAllOrders> } ></Route>
           <Route path='addAProduct' element={<AddAProduct></AddAProduct>} ></Route>
+          <Route path='manageProduct' element={<Manageproduct></Manageproduct>} ></Route>
         </Route>
 
         <Route path='/tools/:toolsid' element={<RequireAuth><Tooldetails></Tooldetails></RequireAuth>}></Route>

@@ -17,7 +17,7 @@ const User = ({ user, index }) => {
             <td>{email}</td>
             <td> <button className='btn btn-sm btn-warning'>Role</button> </td>
             <td> <button className='btn btn-sm btn-success' disabled={role == 'admin'} onClick={makeAdmin}>{role ? 'Admin': 'Make Admin'}</button> </td>
-            <td> <label for="delete-order" class="btn btn-sm btn-error">Delete</label></td>
+            <td> <label for="delete-order" className="btn btn-sm btn-error">Delete</label></td>
         </tr>
     );
 };

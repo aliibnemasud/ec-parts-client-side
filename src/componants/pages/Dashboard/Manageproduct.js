@@ -1,18 +1,15 @@
-import React from 'react';
-import { useQuery } from 'react-query';
-import Loading from '../Shared/Loading/Loading';
-import User from './User';
+import React, { useEffect, useState } from 'react';
+import AllProducts from './AllProducts';
 
-const ManageUser = () => {
+const Manageproduct = () => {
 
-    const { isLoading, error, data: users } = useQuery('users', ()=>
-    fetch('http://localhost:5000/users')
-    .then(rs => rs.json())    
-    )
-
-    if(isLoading){
-        return <Loading></Loading>
-    }
+    const [tools, setTools] = useState([]);
+    
+    useEffect(()=> {
+        fetch('http://localhost:5000/tools')
+        .then(res => res.json())
+        .then(data => setTools(data))
+    }, [])
 
     return (
         <div>
@@ -24,18 +21,18 @@ const ManageUser = () => {
                         <tr>
                             <th>No</th>
                             <th>Name</th>
-                            <th>Email</th>
-                            <th>Role</th>                            
-                            <th>Action</th>
+                            <th>Price</th>
+                            <th>Stock</th>                            
+                            <th>Manage</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) => <User
-                                user={user}
+                            tools.map((tool, index) => <AllProducts
+                                tool={tool}
                                 index={index}                                
-                            ></User>)
+                            ></AllProducts>)
                         }
                     </tbody>
                 </table>
@@ -45,4 +42,4 @@ const ManageUser = () => {
     );
 };
 
-export default ManageUser;
+export default Manageproduct;
