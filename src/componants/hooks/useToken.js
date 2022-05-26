@@ -8,7 +8,7 @@ const useToken = user => {
         const currentuser = {email: email};
         if(email){
        
-            const url = `http://localhost:5000/users/${email}`;
+            const url = `https://floating-dusk-82041.herokuapp.com/users/${email}`;
             fetch(url, {
                 method: 'PUT',
                 headers:{

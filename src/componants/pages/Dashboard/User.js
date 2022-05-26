@@ -3,7 +3,7 @@ const User = ({ user, index }) => {
 
 
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://floating-dusk-82041.herokuapp.com/user/admin/${email}`, {
             method: 'PUT'
         })
         .then(res => res.json())

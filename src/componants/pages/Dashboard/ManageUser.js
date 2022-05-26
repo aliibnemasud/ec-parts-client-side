@@ -6,7 +6,7 @@ import User from './User';
 const ManageUser = () => {
 
     const { isLoading, error, data: users } = useQuery('users', ()=>
-    fetch('http://localhost:5000/users')
+    fetch('https://floating-dusk-82041.herokuapp.com/users')
     .then(rs => rs.json())    
     )
 

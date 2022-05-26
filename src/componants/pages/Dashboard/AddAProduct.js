@@ -25,7 +25,7 @@ const AddAProduct = () => {
             desc: toolsDesc,
             img: image
         }
-        fetch('http://localhost:5000/tools', {
+        fetch('https://floating-dusk-82041.herokuapp.com/tools', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

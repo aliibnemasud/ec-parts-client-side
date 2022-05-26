@@ -15,7 +15,7 @@ const Tooldetails = () => {
     const { name, img, desc, price, stock } = tools;
 
     useEffect(() => {
-        const url = `http://localhost:5000/tools/${toolsid}`;
+        const url = `https://floating-dusk-82041.herokuapp.com/tools/${toolsid}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setTools(data))
@@ -51,7 +51,7 @@ const Tooldetails = () => {
             email: user.email            
         }
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://floating-dusk-82041.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
