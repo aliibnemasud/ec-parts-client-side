@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading/Loading';
+import DeleteUser from './DeleteUser';
 import User from './User';
 
 const ManageUser = () => {
+
+    const [deleteUser, setDeleteUser] = useState(null)
 
     const { isLoading, error, data: users } = useQuery('users', ()=>
     fetch('https://floating-dusk-82041.herokuapp.com/users')
@@ -34,13 +37,14 @@ const ManageUser = () => {
                         {
                             users.map((user, index) => <User
                                 user={user}
-                                index={index}                                
+                                index={index}
+                                setDeleteUser={setDeleteUser}                                
                             ></User>)
                         }
                     </tbody>
                 </table>
             </div>
-            {/* {deleteOrder && <DeleteOrderModal deleteOrder={deleteOrder}></DeleteOrderModal>} */}
+            {deleteUser && <DeleteUser deleteUser={deleteUser}> </DeleteUser>}
         </div>
     );
 };

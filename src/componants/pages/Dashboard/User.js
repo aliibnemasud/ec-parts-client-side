@@ -1,6 +1,7 @@
-const User = ({ user, index }) => {
-    const { email, role } = user; 
+import React from "react";
 
+const User = ({ user, index, setDeleteUser}) => {
+    const {_id, email, role } = user;
 
     const makeAdmin = () => {
         fetch(`https://floating-dusk-82041.herokuapp.com/user/admin/${email}`, {
@@ -17,7 +18,8 @@ const User = ({ user, index }) => {
             <td>{email}</td>
             <td> <button className='btn btn-sm btn-warning'>Role</button> </td>
             <td> <button className='btn btn-sm btn-success' disabled={role == 'admin'} onClick={makeAdmin}>{role ? 'Admin': 'Make Admin'}</button> </td>
-            <td> <label for="delete-order" className="btn btn-sm btn-error">Delete</label></td>
+            
+            <td> <label onClick={()=> setDeleteUser(_id)} for="delete-user" className="btn btn-sm btn-error">Delete</label></td>
         </tr>
     );
 };
