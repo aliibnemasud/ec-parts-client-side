@@ -6,7 +6,7 @@ const Reviews = () => {
     const [reviews, setReview] = useState([]);
 
     useEffect(()=> {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://floating-dusk-82041.herokuapp.com/reviews')
         .then(res => res.json())
         .then(data => setReview(data))
 
@@ -16,7 +16,7 @@ const Reviews = () => {
         <div className='max-w-7xl mx-auto my-32'>
             <h1 className='text-4xl text-center my-16 font-bold uppercase'>Customer <span className='text-primary'>Reviews</span></h1>
 
-            <div className='grid grid-cols-3 gap-4'>
+            <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
             {
                 reviews.map(review => <Review key={review._id} review={review}></Review>)
             }

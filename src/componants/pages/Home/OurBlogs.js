@@ -14,7 +14,7 @@ const OurBlogs = () => {
         <div className='max-w-7xl mx-auto my-32'>
             <h1 className='text-4xl text-center my-16 font-bold uppercase'>Our <span className='text-primary'>Blogs</span></h1>
 
-            <div className='grid grid-cols-3 gap-4'>
+            <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     blogs.map(blog => <OurBlog key={blog._id} blog={blog}> </OurBlog>)
                 }

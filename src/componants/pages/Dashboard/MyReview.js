@@ -25,7 +25,7 @@ const MyReview = () => {
             img: user.photoURL
         }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://floating-dusk-82041.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -12,7 +12,7 @@ const BusinessSummary = () => {
         <div className='max-w-7xl mx-auto'>
             <h1 className='text-4xl text-center my-16 font-bold uppercase'>Business <span className='text-primary'>Summary</span></h1>
 
-            <div className='grid grid-cols-4 gap-10'>
+            <div className='grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
 
                 <BusinessSummaryDetail icon={icon} total="550+" service="Successfully Delivered"></BusinessSummaryDetail>
                 <BusinessSummaryDetail icon={icon2} total="450+" service="Happy Clients"></BusinessSummaryDetail>

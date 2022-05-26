@@ -5,7 +5,7 @@ const DeleteUser = ({deleteUser}) => {
 
     const [user, setUser] = useState('');    
     useEffect(() =>{
-        fetch(`http://localhost:5000/users/${deleteUser}`)
+        fetch(`https://floating-dusk-82041.herokuapp.com/users/${deleteUser}`)
         .then(res => res.json())
         .then(data => setUser(data))
     },[])
@@ -13,7 +13,7 @@ const DeleteUser = ({deleteUser}) => {
     console.log(user)
     
     const handleDelete = id =>{
-        const url = `http://localhost:5000/users/${id}`;
+        const url = `https://floating-dusk-82041.herokuapp.com/users/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
