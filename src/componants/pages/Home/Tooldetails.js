@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
@@ -9,16 +9,16 @@ const Tooldetails = () => {
     const { toolsid } = useParams();
     const navigate = useNavigate();
 
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
 
-    const [tools, setProduct] = useState({});
-    const { name, img, desc, price } = tools;
+    const [tools, setTools] = useState({});
+    const { name, img, desc, price, stock } = tools;
 
     useEffect(() => {
         const url = `http://localhost:5000/tools/${toolsid}`;
         fetch(url)
             .then(res => res.json())
-            .then(data => setProduct(data))
+            .then(data => setTools(data))
     }, [])
 
     const [quantity, setquantity] = useState(null);
@@ -60,8 +60,7 @@ const Tooldetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                toast.success("Order Placed Success")
-                console.log(data)
+                toast.success("Order Placed Success")                
                 navigate('/dashboard')
             })
     }
@@ -77,7 +76,7 @@ const Tooldetails = () => {
                     <div className="card-body">
                         <h2 className="card-title">
                             {name}
-                            <div className="badge badge-secondary">Minimum 10</div>
+                            <div className="badge badge-secondary">In-Stock: {stock} ps</div>
                         </h2>
                         <p>{desc}</p>
 

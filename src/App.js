@@ -16,6 +16,8 @@ import Error from './componants/pages/404/Error';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ManageUser from './componants/pages/Dashboard/ManageUser';
+import ManageAllOrders from './componants/pages/Dashboard/ManageAllOrders';
+import AddAProduct from './componants/pages/Dashboard/AddAProduct';
 
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
           <Route path='myreview' element={<MyReview></MyReview>} ></Route>
           <Route path='myprofile' element={ <Myprofile></Myprofile>} ></Route>
           <Route path='manageuser' element={ <ManageUser></ManageUser>} ></Route>
+          <Route path='manageallorders' element={ <ManageAllOrders></ManageAllOrders> } ></Route>
+          <Route path='addAProduct' element={<AddAProduct></AddAProduct>} ></Route>
         </Route>
 
         <Route path='/tools/:toolsid' element={<RequireAuth><Tooldetails></Tooldetails></RequireAuth>}></Route>
