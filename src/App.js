@@ -15,6 +15,7 @@ import RequireAuth from './componants/pages/Shared/RequireAuth/RequireAuth';
 import Error from './componants/pages/404/Error';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ManageUser from './componants/pages/Dashboard/ManageUser';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route index element={<MyOrder></MyOrder>} ></Route>
           <Route path='myreview' element={<MyReview></MyReview>} ></Route>
           <Route path='myprofile' element={ <Myprofile></Myprofile>} ></Route>
+          <Route path='manageuser' element={ <ManageUser></ManageUser>} ></Route>
         </Route>
 
         <Route path='/tools/:toolsid' element={<RequireAuth><Tooldetails></Tooldetails></RequireAuth>}></Route>

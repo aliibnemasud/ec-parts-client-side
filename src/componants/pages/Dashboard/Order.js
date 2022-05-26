@@ -1,17 +1,17 @@
 import React from 'react';
 
-const Order = ({order}) => {
+const Order = ({order, setDeleteOrder, index}) => {
     const { name, price, toatlPrice, quantity} = order;
     return (
         <tr>
-            <th>1</th>
+            <th>{index + 1}</th>
             <td> {name} </td>
-            <td>{price}</td>
+            <td>$ {price}</td>
             <td>{quantity}</td>            
-            <td>{toatlPrice}</td>            
+            <td>$ {toatlPrice}</td>            
             <td> <button className='btn btn-sm btn-warning'>Unpaid</button> </td>            
             <td> <button className='btn btn-sm btn-success'>Pay</button> </td>            
-            <td> <button className='btn btn-sm btn-error'>Delete</button> </td>            
+            <td> <label onClick={()=> setDeleteOrder(order)} for="delete-order" class="btn btn-sm btn-error">Delete</label></td>                        
         </tr>
     );
 };
