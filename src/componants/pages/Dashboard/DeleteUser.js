@@ -10,7 +10,7 @@ const DeleteUser = ({deleteUser}) => {
         .then(data => setUser(data))
     },[])
 
-    console.log(user)
+    
     
     const handleDelete = id =>{
         const url = `https://floating-dusk-82041.herokuapp.com/users/${id}`;

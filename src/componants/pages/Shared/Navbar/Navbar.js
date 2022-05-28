@@ -5,15 +5,24 @@ import { useNavigate } from 'react-router-dom';
 import Logo from '../../../../assets/img/logo.png';
 import auth from '../../../../firebase.init';
 import CustomLink from '../CustomLink/CustomLink';
+import Loading from '../Loading/Loading';
 
 const Navbar = () => {
     const [user, loading, error] = useAuthState(auth);
     const navigate = useNavigate()
 
+    if(loading){
+        return <Loading></Loading>
+    }
+
     const menu =
         <>
             <li><CustomLink to="/">Home</CustomLink></li>
             <li><CustomLink to="/blog">Blog</CustomLink></li>
+            <li><CustomLink to="/myportfolio">My Portfolio</CustomLink></li>
+            {
+                !user?.uid ? <li><CustomLink to="/login">Login</CustomLink></li> : ''
+            }
             {
                 user?.uid ? <li><CustomLink to="/dashboard">Dashboard</CustomLink></li> : ''
             }

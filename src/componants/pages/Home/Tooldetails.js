@@ -48,7 +48,8 @@ const Tooldetails = () => {
             quantity: quantity,
             price: price,
             toatlPrice: totalPrice,
-            email: user.email            
+            email: user.email,
+            userName: user.displayName            
         }
 
         fetch('https://floating-dusk-82041.herokuapp.com/orders', {
@@ -90,7 +91,7 @@ const Tooldetails = () => {
                             </label>
                             <label className="input-group">
                                 <span>Quantity</span>
-                                <input onChange={handleQualtity} type="number" placeholder="10" className="input input-bordered" min="0" required />
+                                <input onChange={handleQualtity} type="number" placeholder="Minimum 10" className="input input-bordered" min="10" required />
                                 <span>Ps</span>
                             </label>
                         </div>

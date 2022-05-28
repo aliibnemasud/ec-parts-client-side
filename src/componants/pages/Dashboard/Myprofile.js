@@ -16,7 +16,6 @@ const Myprofile = () => {
 
             <h1>Name: {user?.displayName}</h1>
             <h1>Name: {user?.email}</h1>
-            
 
 
         </div>

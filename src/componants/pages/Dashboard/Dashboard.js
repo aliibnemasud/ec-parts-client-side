@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
 import { Link, Outlet } from 'react-router-dom';
-import Loading from '../Shared/Loading/Loading';
+import auth from '../../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import useAdmin from '../../hooks/useAdmin';
+import Loading from '../../pages/Shared/Loading/Loading'
 
 const Dashboard = () => {
 
-    // Load user from mongo db
-    const { isLoading, error, data: users } = useQuery('users', () =>
-        fetch('https://floating-dusk-82041.herokuapp.com/users')
-            .then(rs => rs.json())
-    )
-    const [admin, setAdmin] = useState(false);    
+    const [user, loading] = useAuthState(auth);
+    const [admin] = useAdmin(user);
 
-    if (isLoading) {
+    if (loading) {
         return <Loading></Loading>
     }
+
+    console.log(admin)
 
     return (
         <div className='max-w-7xl mx-auto'>
@@ -31,12 +30,16 @@ const Dashboard = () => {
                     <label for="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
                         {/* <!-- Sidebar content here --> */}
-                        <li> <Link to="myprofile">My Profile</Link> </li>
 
-                        <li> <Link to="myreview">My Review</Link> </li>
-                        <li> <Link to="/dashboard">My Orders</Link> </li>
+                        <li> <Link to="myprofile">My Profile</Link> </li>
                         {
-                            
+                            !admin && <>
+                                <li> <Link to="myreview">My Review</Link> </li>
+                                <li> <Link to="/dashboard">My Orders</Link> </li>
+                            </>
+                        }
+
+                        {admin &&
                             <>
                                 <li> <Link to="manageuser">Manage User</Link> </li>
                                 <li> <Link to="manageallorders">Manage All Order</Link> </li>
@@ -44,6 +47,7 @@ const Dashboard = () => {
                                 <li> <Link to="manageProduct">Manage Product</Link> </li>
                             </>
                         }
+
 
                     </ul>
 

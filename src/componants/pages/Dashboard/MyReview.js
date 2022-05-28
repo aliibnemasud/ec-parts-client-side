@@ -47,7 +47,7 @@ const MyReview = () => {
             <form onSubmit={addReview} className="text-center mt-20">                           
                 
                 <textarea type="text" ref={descRef} placeholder="Type your Review" className="mb-3 textarea textarea-bordered w-full max-w-xs" /> <br />
-                <input type="number" ref={ratingRef} placeholder="Stock" className="mb-3 input input-bordered w-full max-w-xs" required /> <br />
+                <input type="number" ref={ratingRef} placeholder="Rating" className="mb-3 input input-bordered w-full max-w-xs" required /> <br />
                 <input type="submit" value="Add Review" className="btn btn-primary w-full max-w-xs" />
             </form>
 
