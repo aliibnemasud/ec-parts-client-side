@@ -7,8 +7,9 @@ import DeleteOrderModal from './DeleteOrderModal';
 import Order from './Order';
 
 const MyOrder = () => {
+    const token = localStorage.getItem('accessToken');
     const [user] = useAuthState(auth);
-    const [deleteOrder, setDeleteOrder] = useState(null);
+    const [deleteOrder, setDeleteOrder] = useState(null);    
 
     const { isLoading, error, data: orders } = useQuery('orders', () =>
         fetch(`http://localhost:5000/orders?email=${user?.email}`, {
@@ -23,7 +24,8 @@ const MyOrder = () => {
 
     if(isLoading){
         return <Loading></Loading>
-    }    
+    }
+       
 
     return (
         <div>
@@ -44,7 +46,7 @@ const MyOrder = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {
+                        { token &&
                             orders?.map((order, index) => <Order 
                                 order={order}
                                 index={index}

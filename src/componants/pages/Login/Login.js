@@ -36,9 +36,9 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
        signInWithEmailAndPassword(email, password)
-       
-       // Storing the access token to the local storage
 
+       // Storing the access token to the local storage
+       
        fetch ('http://localhost:5000/login', {
         method: 'POST',
         headers: {

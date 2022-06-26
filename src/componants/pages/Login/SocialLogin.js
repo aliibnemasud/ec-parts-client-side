@@ -5,17 +5,22 @@ import auth from '../../../firebase.init';
 import useToken from '../../hooks/useToken';
 
 const SocialLogin = () => {
-  const [signInWithGoogle, user] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, user, loading] = useSignInWithGoogle(auth);
   const [signInWithFacebook] = useSignInWithFacebook(auth);
   const [token] = useToken(user);
   const navigate = useNavigate();
   const location = useLocation();
   const [users] = useAuthState(auth)
+  const accessToken = localStorage.getItem('accessToken')
 
   const from = location.state?.from?.pathname || "/";
 
-  if (user) {
+  if(loading){
+    return <button className="btn btn-square loading"></button>
+  }
 
+  if (user) {
+    
     const email = users.email;
     fetch('http://localhost:5000/login', {
       method: 'POST',
@@ -28,8 +33,8 @@ const SocialLogin = () => {
       .then(data => {
         localStorage.setItem('accessToken', data.accessToken)
       })
-            
-    navigate(from)
+      
+      navigate(from)
   }
 
   return (
