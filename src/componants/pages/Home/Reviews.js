@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Review from './Review';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+
 const Reviews = () => {
 
     const [reviews, setReview] = useState([]);

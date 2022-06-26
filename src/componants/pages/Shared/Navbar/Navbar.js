@@ -11,7 +11,7 @@ const Navbar = () => {
     const [user, loading, error] = useAuthState(auth);
     const navigate = useNavigate()
 
-    if(loading){
+    if (loading) {
         return <Loading></Loading>
     }
 
@@ -53,12 +53,12 @@ const Navbar = () => {
                         <input type="text" placeholder="Search" className="input input-bordered" />
                     </div>
 
-                     {/* profile img */}
+                    {/* profile img */}
 
                     <div className="dropdown dropdown-end">
                         <label tabIndex="0" className="btn btn-ghost btn-circle avatar border-l">
                             <div className="w-10 rounded-full">
-                                {user?.uid ? <img src={user?.photoURL} /> : <img src="https://api.lorem.space/image/face?hash=33791"/> }
+                                {user?.uid ? <img src={user?.photoURL} /> : <img src="https://api.lorem.space/image/face?hash=33791" />}
                             </div>
                         </label>
                         <ul tabIndex="0" className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
@@ -69,16 +69,17 @@ const Navbar = () => {
                                 </a>
                             </li>
                             <li><a>Settings</a></li>
-                            <li> {user?.uid ? <button className='btn btn-secondary' onClick={() => signOut(auth)} >Sing Out</button> : <button className='btn btn-primary' onClick= {() => navigate('/login')} >Login</button>} </li>
+                            <li> {user?.uid ? <button className='btn btn-secondary' onClick={() => signOut(auth)} >Sing Out</button> : <button className='btn btn-primary' onClick={() => navigate('/login')} >Login</button>} </li>
                         </ul>
                     </div>
+                    
 
                     {/* profile img */}
                 </div>
             </div>
-       
+
         </nav >
-       
+
     );
 };
 

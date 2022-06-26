@@ -4,6 +4,7 @@ import BusinessSummary from './BusinessSummary';
 import Contactus from './Contactus';
 import OurBlogs from './OurBlogs';
 import Reviews from './Reviews';
+import Swiiper from './Swiper';
 import Tools from './Tools';
 
 const Home = () => {
@@ -14,7 +15,8 @@ const Home = () => {
             <BusinessSummary></BusinessSummary>
             <Reviews></Reviews>
             <OurBlogs></OurBlogs>
-            <Contactus></Contactus>                  
+            <Contactus></Contactus>
+            <Swiiper></Swiiper>                  
         </div>
     );
 };
