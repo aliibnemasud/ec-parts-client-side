@@ -29,8 +29,7 @@ const SignUp = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await createUserWithEmailAndPassword(email, password);
-        await updateProfile(name); 
-    
+        await updateProfile(name);    
       
     }
     if(loading || updating){

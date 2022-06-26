@@ -52,7 +52,7 @@ const Tooldetails = () => {
             userName: user.displayName            
         }
 
-        fetch('https://floating-dusk-82041.herokuapp.com/orders', {
+        fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

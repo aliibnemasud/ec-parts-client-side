@@ -9,7 +9,7 @@ const MyOrder = () => {
     const [deleteOrder, setDeleteOrder] = useState(null);
 
     const { isLoading, error, data: orders } = useQuery('orders', () =>
-        fetch(`https://floating-dusk-82041.herokuapp.com/orders`)
+        fetch(`http://localhost:5000/allorders`)
         .then(res =>res.json())
     )
 
@@ -20,7 +20,7 @@ const MyOrder = () => {
 
     return (
         <div>
-            <h1 className='text-3xl uppercase my-4 font-bold'>My Orders</h1>
+            <h1 className='text-3xl uppercase my-4 font-bold'>Manage All Orders</h1>
             <div className="overflow-x-auto">
                 <table className="table w-full">
 

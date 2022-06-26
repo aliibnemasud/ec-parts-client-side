@@ -11,14 +11,19 @@ const MyOrder = () => {
     const [deleteOrder, setDeleteOrder] = useState(null);
 
     const { isLoading, error, data: orders } = useQuery('orders', () =>
-        fetch(`https://floating-dusk-82041.herokuapp.com/orders?email=${user?.email}`)
-        .then(res =>res.json())
+        fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+        .then(res =>res.json())        
     )
 
     if(isLoading){
         return <Loading></Loading>
-    }
-    
+    }    
 
     return (
         <div>
@@ -40,7 +45,7 @@ const MyOrder = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <Order 
+                            orders?.map((order, index) => <Order 
                                 order={order}
                                 index={index}
                                 setDeleteOrder={setDeleteOrder}

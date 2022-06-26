@@ -9,7 +9,6 @@ const DeleteUser = ({deleteUser}) => {
         .then(res => res.json())
         .then(data => setUser(data))
     },[])
-
     
     
     const handleDelete = id =>{

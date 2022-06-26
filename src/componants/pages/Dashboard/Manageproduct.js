@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import AllProducts from './AllProducts';
+import DeleteProductModal from './DeleteProductModal';
 
 const Manageproduct = () => {
 
     const [tools, setTools] = useState([]);
+
+    const [deleteTools, setDeleteTools] = useState(null);
     
-    useEffect(()=> {
-        fetch('https://floating-dusk-82041.herokuapp.com/tools')
+    useEffect(()=> {        
+
+         fetch('http://localhost:5000/tools')
         .then(res => res.json())
-        .then(data => setTools(data))
-    }, [])
+        .then( data =>  setTools(data))
+    }, [tools])
 
     return (
         <div>
-            <h1 className='text-3xl uppercase my-4 font-bold'>Manage User</h1>
+            <h1 className='text-3xl uppercase my-4 font-bold'>Manage Products</h1>
             <div className="overflow-x-auto">
                 <table className="table w-full">
 
@@ -31,13 +35,14 @@ const Manageproduct = () => {
                         {
                             tools.map((tool, index) => <AllProducts
                                 tool={tool}
-                                index={index}                                
+                                index={index}
+                                setDeleteTools = {setDeleteTools}                                
                             ></AllProducts>)
                         }
                     </tbody>
                 </table>
             </div>
-            {/* {deleteOrder && <DeleteOrderModal deleteOrder={deleteOrder}></DeleteOrderModal>} */}
+            {deleteTools &&  <DeleteProductModal deleteTools={deleteTools} ></DeleteProductModal>}
         </div>
     );
 };

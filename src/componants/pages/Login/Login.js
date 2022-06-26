@@ -34,8 +34,23 @@ const Login = () => {
     const handleLogin = e => {
         e.preventDefault();
         const email = emailRef.current.value;
-       const password = passwordRef.current.value;
-       signInWithEmailAndPassword(email, password)       
+        const password = passwordRef.current.value;
+       signInWithEmailAndPassword(email, password)
+       
+       // Storing the access token to the local storage
+
+       fetch ('http://localhost:5000/login', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({email}) 
+       })
+       .then(res => res.json())
+       .then(data => {        
+        localStorage.setItem('accessToken', data.accessToken)
+       })
+       
     }
 
     
