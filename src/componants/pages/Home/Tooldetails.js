@@ -72,7 +72,7 @@ const Tooldetails = () => {
             <h1 className='text-3xl text-center text-primary uppercase'>Purchase Page</h1>
 
             <div className="flex flex-wrap justify-center my-20">
-                <div className="card w-96 w-auto bg-base-100 shadow-xl mx-auto my-20">
+                <div className="card w-1/2 bg-base-100 shadow-xl mx-auto my-20">
                     <figure><img src={img} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">
