@@ -10,7 +10,7 @@ const BlogDetails = () => {
     const {img, title, desc} = blog;
 
     useEffect(() => {
-        const url = `http://localhost:5000/blogs/${blogsid}`;
+        const url = `https://floating-dusk-82041.herokuapp.com/blogs/${blogsid}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setBlog(data))

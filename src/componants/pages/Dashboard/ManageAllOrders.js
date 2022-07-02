@@ -9,7 +9,7 @@ const MyOrder = () => {
     const [deleteOrder, setDeleteOrder] = useState(null);
 
     const { isLoading, error, data: orders } = useQuery('orders', () =>
-        fetch(`http://localhost:5000/allorders`)
+        fetch(`https://floating-dusk-82041.herokuapp.com/allorders`)
         .then(res =>res.json())
     )
 

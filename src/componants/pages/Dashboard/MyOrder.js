@@ -12,7 +12,7 @@ const MyOrder = () => {
     const [deleteOrder, setDeleteOrder] = useState(null);    
 
     const { isLoading, error, data: orders } = useQuery('orders', () =>
-        fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+        fetch(`https://floating-dusk-82041.herokuapp.com/orders?email=${user?.email}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',

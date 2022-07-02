@@ -6,7 +6,7 @@ const DeleteProductModal = ({deleteTools}) => {
     const {_id, name } = deleteTools; 
 
     const handleDelete = id =>{
-        const url = `http://localhost:5000/tool/${id}`;
+        const url = `https://floating-dusk-82041.herokuapp.com/tool/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
