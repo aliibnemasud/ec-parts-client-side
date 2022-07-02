@@ -12,7 +12,7 @@ const Tools = () => {
         .then(data => setTools(data))
     }, [])
     return (
-        <div className='max-w-7xl mx-auto my-32'>
+        <div className='max-w-7xl mx-auto mt-32 mb-16'>
            <h1 className='text-4xl text-center my-16 font-bold uppercase'>Cycle <span className='text-primary'>Tools</span></h1>
 
            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'> 
@@ -22,8 +22,7 @@ const Tools = () => {
                }      
 
            </div>
-           <div className="my-10 text-center">
-           <PrimaryBtn>Load More</PrimaryBtn>
+           <div className="my-10 text-center">           
            </div>           
         </div>
     );

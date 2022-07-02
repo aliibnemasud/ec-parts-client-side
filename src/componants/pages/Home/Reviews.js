@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import Review from './Review';
-
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const Reviews = () => {
 
     const [reviews, setReview] = useState([]);
 
-    useEffect(()=> {
+    useEffect(() => {
         fetch('https://floating-dusk-82041.herokuapp.com/reviews')
-        .then(res => res.json())
-        .then(data => setReview(data))
+            .then(res => res.json())
+            .then(data => setReview(data))
 
     }, [])
 
@@ -19,11 +22,18 @@ const Reviews = () => {
         <div className='max-w-7xl mx-auto my-32'>
             <h1 className='text-4xl text-center my-16 font-bold uppercase'>Customer <span className='text-primary'>Reviews</span></h1>
 
-            <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-            {
-                reviews.map(review => <Review key={review._id} review={review}></Review>)
-            }
-            </div>
+
+            <Swiper className='max-w-7xl mx-auto'
+                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                spaceBetween={20}
+                slidesPerView={3}
+                navigation
+                pagination={{ clickable: true }} >
+                    
+                {
+                    reviews.map(review => <SwiperSlide> <Review key={review._id} review={review}></Review> </SwiperSlide>)
+                }
+            </Swiper>        
         </div>
     );
 };

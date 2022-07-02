@@ -1,7 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const OurBlog = ({blog}) => {
-   const {title, img, desc} = blog
+   const {title, img, desc, _id} = blog;
+
+   const navigate = useNavigate();
+
+    const navigateToBlogDetails = _id => {
+        navigate(`/blogs/${_id}`)
+    }
+
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
@@ -11,7 +19,7 @@ const OurBlog = ({blog}) => {
                 <h2 className="card-title">{title}</h2>
                 <p>{desc}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary btn-sm text-white">Read More</button>
+                    <button onClick={() => navigateToBlogDetails(_id)} className="btn btn-primary btn-sm text-white">Read More</button>
                 </div>
             </div>
         </div>

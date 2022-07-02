@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import icon from '../../../assets/icons/message-circle-dots.png';
 import icon2 from '../../../assets/icons/send-2.png';
 import icon3 from '../../../assets/icons/user-check.png';
@@ -7,6 +8,8 @@ import PrimaryBtn from '../Shared/Buttons/PrimaryBtn';
 import BusinessSummaryDetail from './BusinessSummaryDetail';
 
 const BusinessSummary = () => {
+
+    const navigate = useNavigate();
 
     return (
         <div className='max-w-7xl mx-auto'>
@@ -21,8 +24,8 @@ const BusinessSummary = () => {
             </div>           
 
             <div className='flex flex-wrap justify-between shadow-xl items-center px-10 py-5 my-16 rounded-lg'>
-                <h1 className='text-3xl font-bold uppercase'>If you have any question,, Let  us know.</h1>
-                <PrimaryBtn>Get Started</PrimaryBtn>
+                <h1 className='text-3xl font-bold uppercase'>If you have any question,, Let  us know.</h1>                
+                <button onClick={()=> navigate('/shop')} className="btn btn-primary mt-5 text-white" >Get Started</button>
             </div>
 
         </div>

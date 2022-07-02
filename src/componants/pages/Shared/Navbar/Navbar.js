@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../../../assets/img/logo.png';
 import auth from '../../../../firebase.init';
 import CustomLink from '../CustomLink/CustomLink';
@@ -18,6 +18,7 @@ const Navbar = () => {
     const menu =
         <>
             <li><CustomLink to="/">Home</CustomLink></li>
+            <li><CustomLink to="/shop">Shop</CustomLink></li>
             <li><CustomLink to="/blog">Blog</CustomLink></li>
             <li><CustomLink to="/myportfolio">My Portfolio</CustomLink></li>
             {
@@ -29,7 +30,7 @@ const Navbar = () => {
         </>
     return (
 
-        <nav className='bg-base-100 py-5'>
+        <nav className='bg-slate-50 py-5'>
             <div className="navbar max-w-7xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -40,7 +41,7 @@ const Navbar = () => {
                             {menu}
                         </ul>
                     </div>
-                    <img src={Logo} alt="ECParts" />
+                    <img onClick={() => navigate("/")} className="cursor-pointer" src={Logo} alt="ECParts" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
@@ -62,13 +63,10 @@ const Navbar = () => {
                             </div>
                         </label>
                         <ul tabIndex="0" className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
-                            </li>
-                            <li><a>Settings</a></li>
+
+                            <li><Link to="/dashboard/myprofile" className="justify-between ">Profile</Link></li>
+                            <li><Link to="/dashboard" className="justify-between ">Order</Link></li>
+                            
                             <li> {user?.uid ? <button className='btn btn-secondary' onClick={() => signOut(auth)} >Sing Out</button> : <button className='btn btn-primary' onClick={() => navigate('/login')} >Login</button>} </li>
                         </ul>
                     </div>

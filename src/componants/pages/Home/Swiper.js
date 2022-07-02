@@ -14,10 +14,9 @@ const Swiiper = () => {
         spaceBetween={20}
         slidesPerView={3}
         navigation
-        pagination={{ clickable: true }}
-        
-        >
-            <SwiperSlide><div class="card w-96 bg-base-100 shadow-xl">
+        pagination={{ clickable: true }} >
+            <SwiperSlide>
+                <div class="card w-96 bg-base-100 shadow-xl">
                 <div class="card-body">
                     <h2 class="card-title">Card title!</h2>
                     <p>If a dog chews shoes whose shoes does he choose?</p>

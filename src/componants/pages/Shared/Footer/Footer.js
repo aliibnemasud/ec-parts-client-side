@@ -3,11 +3,12 @@ import Logo from '../../../../assets/img/logo.png';
 
 const Footer = () => {
     return (
-        <footer className="bg-base-100 text-base-content mt-16">
+        <footer className="bg-slate-50 text-base-content mt-16 pt-5">
             <div className='footer max-w-7xl mx-auto'>
                 <div>
                     <img src={Logo} alt="" />
-                    <p>ECPARTS Industries Ltd.<br />Providing reliable tech since 2011</p>
+                    <p>ECPARTS is a manufacture website. It manufacture <br /> 
+                    Electronic Cycle parts.Providing reliable services since 2019</p>
                 </div>
                 <div>
                     <span className="footer-title">Services</span>

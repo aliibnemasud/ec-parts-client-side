@@ -8,7 +8,7 @@ const BusinessSummaryDetail = ({icon, total, service}) => {
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title text-5xl font-bold mb-3">{total}</h2>
-                <p>{service}</p>                
+                <p>{service}</p>
             </div>
         </div>
     );

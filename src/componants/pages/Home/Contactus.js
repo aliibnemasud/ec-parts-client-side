@@ -7,10 +7,8 @@ const Contactus = () => {
             <h1 className='text-4xl text-center my-16 font-bold uppercase'>Contact <span className='text-primary'>Us</span></h1>
 
             <div className="hero">
-                <div className="hero-content lg:flex-row">
-                    <div className="text-center lg:text-left">
-                        <img src={Contact} alt="" />
-                    </div>
+                <div className="hero-content">                    
+                        <img src={Contact} alt="" />                    
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
                         <div className="form-control">

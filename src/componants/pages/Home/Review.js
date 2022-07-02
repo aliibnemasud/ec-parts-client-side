@@ -12,7 +12,7 @@ const Review = ({review}) => {
             </div>
 
             <div className="flex-1">
-                <h2 className="text-3xl text-primary">{name}</h2>
+                <h2 className="text-xl text-primary">{name}</h2>
                 <p>{desc}</p>
                 <h3>Rating: {rating}</h3>                
             </div>

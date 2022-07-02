@@ -3,9 +3,6 @@ import ali from '../../../assets/img/ali.png';
 
 const MyPortfolio = () => {
 
-
-
-
     return (
         <div className='max-w-7xl mx-auto my-20'>
 
@@ -27,7 +24,7 @@ const MyPortfolio = () => {
 
             <section className=' mb-40'>
 
-            <h1 className='text-3xl font-bold text-center my-20'>Recent three projects</h1>
+            <h1 className='text-3xl font-bold text-center my-20'>Recent Projects</h1>
 
                 <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
                     <div class="card bg-base-100 shadow-xl">
