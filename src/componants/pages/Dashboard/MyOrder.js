@@ -1,15 +1,18 @@
+import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 import DeleteOrderModal from './DeleteOrderModal';
 import Order from './Order';
 
 const MyOrder = () => {
-    // const token = localStorage.getItem('accessToken');
+    const token = localStorage.getItem('accessToken');
     const [user] = useAuthState(auth);
-    const [deleteOrder, setDeleteOrder] = useState(null);    
+    const [deleteOrder, setDeleteOrder] = useState(null);
+    const navigate = useNavigate();   
 
     const { isLoading, error, data: orders } = useQuery('orders', () =>
         fetch(`https://floating-dusk-82041.herokuapp.com/orders?email=${user?.email}`, {
@@ -25,7 +28,16 @@ const MyOrder = () => {
     if(isLoading){
         return <Loading></Loading>
     }
-       
+
+    let myOrder = [];
+    if(token){
+        myOrder = orders;
+    }
+
+    if(!token){
+        signOut(auth)
+        navigate('/login')
+    }     
 
     return (
         <div>
@@ -47,7 +59,7 @@ const MyOrder = () => {
                     </thead>
                     <tbody>
                         { 
-                            orders?.map((order, index) => <Order 
+                            myOrder.map((order, index) => <Order 
                                 order={order}
                                 index={index}
                                 setDeleteOrder={setDeleteOrder}

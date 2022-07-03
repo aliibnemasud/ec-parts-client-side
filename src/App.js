@@ -33,6 +33,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+
+        {/* optional */}
+        <Route path='/dashboard/login' element={<Login></Login>}></Route>
+
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/blogs/:blogsid' element={<BlogDetails></BlogDetails>}></Route>
