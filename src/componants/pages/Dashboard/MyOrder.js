@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
@@ -14,7 +14,7 @@ const MyOrder = () => {
     const [deleteOrder, setDeleteOrder] = useState(null);
     const navigate = useNavigate();   
 
-    const { isLoading, error, data: orders } = useQuery('orders', () =>
+    const { isLoading, error, data: orders } = useQuery(['orders'], () =>
         fetch(`https://floating-dusk-82041.herokuapp.com/orders?email=${user?.email}`, {
             method: 'GET',
             headers: {
@@ -25,19 +25,29 @@ const MyOrder = () => {
         .then(res =>res.json())        
     )
 
+    /* const sendToken = {
+        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+    }
+
+    console.log(sendToken)
+
+    const {isLoading, data: orders} = useQuery(["myOrders"], () => axios.get(`https://floating-dusk-82041.herokuapp.com/orders?email=${user?.email}`, sendToken));
+    */
+
     if(isLoading){
         return <Loading></Loading>
     }
 
-    let myOrder = [];
-    if(token){
-        myOrder = orders;
-    }
+    let myOrder = [];  
 
     if(!token){
         signOut(auth)
         navigate('/login')
-    }     
+    }
+
+    else if(token){
+        myOrder = orders;
+    }    
 
     return (
         <div>

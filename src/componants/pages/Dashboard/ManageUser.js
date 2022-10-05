@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import Loading from '../Shared/Loading/Loading';
 import DeleteUser from './DeleteUser';
 import User from './User';
@@ -8,7 +8,7 @@ const ManageUser = () => {
 
     const [deleteUser, setDeleteUser] = useState(null)
 
-    const { isLoading, error, data: users } = useQuery('users', ()=>
+    const { isLoading, error, data: users } = useQuery(['users'], ()=>
     fetch('https://floating-dusk-82041.herokuapp.com/users')
     .then(rs => rs.json())    
     )

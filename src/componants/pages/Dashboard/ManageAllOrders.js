@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import Loading from '../Shared/Loading/Loading';
 import DeleteOrderModal from './DeleteOrderModal';
 import Order from './Order';
+import axios from 'axios';
 
 const MyOrder = () => {
 
-    const [deleteOrder, setDeleteOrder] = useState(null);
+    const [deleteOrder, setDeleteOrder] = useState(null);    
 
-    const { isLoading, error, data: orders } = useQuery('orders', () =>
-        fetch(`https://floating-dusk-82041.herokuapp.com/allorders`)
-        .then(res =>res.json())
+    const { isLoading, error, data } = useQuery(["orders"], () => axios.get('https://floating-dusk-82041.herokuapp.com/allorders')
     )
+
+    const orders = data?.data;   
 
     if(isLoading){
         return <Loading></Loading>
@@ -37,7 +38,7 @@ const MyOrder = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {
+                        { orders &&
                             orders.map((order, index) => <Order 
                                 order={order}
                                 index={index}
