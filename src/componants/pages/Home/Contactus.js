@@ -3,41 +3,42 @@ import Contact from '../../../assets/img/contact.png';
 
 const Contactus = () => {
     return (
-        <div className='my-32'>
-            <h1 className='text-4xl text-center my-16 font-bold uppercase'>Contact <span className='text-primary'>Us</span></h1>
+        <div className='contactUs'>
+            <div className='max-w-7xl mx-auto py-10'>
 
-            <div className="hero">
-                <div className="hero-content">                    
-                        <img src={Contact} alt="" />                    
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <div className="card-body">
-                        <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Your Name</span>
-                                </label>
-                                <input type="text" placeholder="Name" className="input input-bordered" />
-                            </div>
-
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input type="text" placeholder="email" className="input input-bordered" />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Drop a line..</span>
-                                </label>
-                                <textarea className="textarea textarea-bordered" placeholder="Message"></textarea>                             
-                            </div>
-                            <div className="form-control mt-6">
-                                <button className="btn btn-primary text-white">Sent</button>
-                            </div>
-                        </div>
+                <div className='flex justify-between items-center flex-wrap'>
+                    <div className='flex-1'>
+                        <h1 className='text-4xl font-bold uppercase'>Contact <span className='text-primary'>Us</span></h1>
+                        <img src={Contact} alt="" className='p-20' />
+                        {/* <p className='text-2xl'>aliibnemasud@gmail.com | <a className=' text-blue-600' href="https://portfolio.aliibne.com/">portfolio.aliibne.com</a> </p>
+        <p className='text-2xl mt-2'>+8801785748248 | Mirpur, Dhaka, Bangladesh</p> */}
                     </div>
+
+                    <form action="" className='flex-1 px-10'>
+                        <label class="block">
+                            <span class="block text-slate-700 my-5 font-bold">Your Name</span>
+                            <input type="text" className='input input-bordered w-full' placeholder='Your name' />
+                        </label>
+                        <label class="block">
+                            <span class="block text-slate-700 my-5 font-bold">Your Email</span>
+                            <input type="email" className='input input-bordered w-full' placeholder='email' />
+                        </label>
+                        <label class="block">
+                            <span class="block text-slate-700 my-5 font-bold">Your Message</span>
+                            <textarea type="email" className='textarea textarea-bordered w-full' placeholder='Drop a line...' rows="4" />
+                        </label>
+
+                        <input type="submit" className='btn btn-primary px-10 w-full mt-5' value="Send" />
+
+
+                    </form>
                 </div>
+
+
+
             </div>
         </div>
+
     );
 };
 

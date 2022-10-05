@@ -1,0 +1,21 @@
+.review {
+    background:linear-gradient(to right, #4f5ef2d6, #0dabeede), url("https://transport.thememove.com/wp-content/uploads/2015/06/parallax01.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 50vh;   
+}
+
+.hero {
+    background:linear-gradient(to right, #fcfcfcd6, #fafcfde7), url("https://i.ibb.co/qN5F98C/cycle.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contactUs {
+    background: linear-gradient(to right, #fcfcfcd6, #20202057), url("https://i.ibb.co/vVqXvWL/contactusbg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 40vh;
+}

@@ -9,20 +9,14 @@ import Reviews from './Reviews';
 import Tools from './Tools';
 
 const Home = () => {
-
-    const navigate = useNavigate();
-
     return (
         <div>
             <Banner></Banner>
-            <Tools></Tools>
-            <div className="text-center">
-                <button onClick={() => navigate('/shop')} className="btn btn-primary mt-5 text-center text-white" >Load More</button>
-            </div>
-            <BusinessSummary></BusinessSummary>
+            <Tools></Tools>            
             <Reviews></Reviews>
             <OurBlogs></OurBlogs>
             <Contactus></Contactus>
+            <BusinessSummary></BusinessSummary>
         </div>
     );
 };

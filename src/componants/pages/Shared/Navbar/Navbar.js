@@ -41,7 +41,7 @@ const Navbar = () => {
                             {menu}
                         </ul>
                     </div>
-                    <img onClick={() => navigate("/")} className="cursor-pointer" src={Logo} alt="ECParts" />
+                    <img onClick={() => navigate("/")} className="cursor-pointer w-36" src={Logo} alt="ECParts" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">

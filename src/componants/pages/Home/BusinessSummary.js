@@ -12,7 +12,7 @@ const BusinessSummary = () => {
     const navigate = useNavigate();
 
     return (
-        <div className='max-w-7xl mx-auto'>
+        <div className='max-w-7xl mx-auto my-32'>
             <h1 className='text-4xl text-center my-16 font-bold uppercase'>Business <span className='text-primary'>Summary</span></h1>
 
             <div className='grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
@@ -23,10 +23,10 @@ const BusinessSummary = () => {
                 <BusinessSummaryDetail icon={icon4} total="400+" service="Positive Feedback"></BusinessSummaryDetail>
             </div>           
 
-            <div className='flex flex-wrap justify-between shadow-xl items-center px-10 py-5 my-16 rounded-lg'>
+           {/*  <div className='flex flex-wrap justify-between shadow-xl items-center px-10 py-5 my-16 rounded-lg'>
                 <h1 className='text-3xl font-bold uppercase'>If you have any question,, Let  us know.</h1>                
                 <button onClick={()=> navigate('/shop')} className="btn btn-primary mt-5 text-white" >Get Started</button>
-            </div>
+            </div> */}
 
         </div>
     );
