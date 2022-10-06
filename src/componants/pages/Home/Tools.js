@@ -14,10 +14,12 @@ const Tools = () => {
 
     // const loadTools = () => axios.get('https://floating-dusk-82041.herokuapp.com/tools');
     const { isLoading, data } = useQuery(["tools"], () => axios.get('https://floating-dusk-82041.herokuapp.com/tools'));
-    const tools = data?.data;
+        
     if (isLoading) {
         return <Loading />
     }
+
+    const tools = data?.data;
 
     return (
         <div className='max-w-7xl mx-auto mb-16'>

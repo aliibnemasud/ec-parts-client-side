@@ -6,15 +6,19 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './home.css';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+import Loading from '../Shared/Loading/Loading';
 
 const Reviews = () => {
-    const [reviews, setReview] = useState([]);
-    useEffect(() => {
-        fetch('https://floating-dusk-82041.herokuapp.com/reviews')
-            .then(res => res.json())
-            .then(data => setReview(data))
-    }, [])
 
+    const {isLoading, data} = useQuery(["reviews"],() => axios.get('https://floating-dusk-82041.herokuapp.com/tools'));   
+
+    if (isLoading) {
+        return <Loading />
+    }
+    const reviews = data?.data;
+    
     return (
         <div className="review flex justify-center items-center">
             <div className='max-w-7xl mx-auto'>

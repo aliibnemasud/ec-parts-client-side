@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import OurBlog from './OurBlog';
 import PrimaryBtn from '../Shared/Buttons/PrimaryBtn';
+import axios from 'axios';
+import Loading from '../Shared/Loading/Loading';
+import { useQuery } from '@tanstack/react-query';
 
-const OurBlogs = () => {
-    const [blogs, setBlogs] = useState([]);
+const OurBlogs = () => {    
 
-    useEffect(() => {
-        fetch('https://floating-dusk-82041.herokuapp.com/blogs')
-            .then(res => res.json())
-            .then(data => setBlogs(data))
-    }, [])
+    const {isLoading, data} = useQuery(["blogs"],() => axios.get('https://floating-dusk-82041.herokuapp.com/blogs'));
+
+    if(isLoading){
+        return <Loading/>
+    }
+    const blogs = data?.data;
+    
     return (
         <div className='max-w-7xl mx-auto my-32'>
             <h1 className='text-4xl text-center my-16 font-bold uppercase'>Our <span className='text-primary'>Blogs</span></h1>
