@@ -7,7 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const OurBlogs = () => {    
 
-    const {isLoading, data} = useQuery(["blogs"],() => axios.get('https://floating-dusk-82041.herokuapp.com/blogs'));
+    const {isLoading, data} = useQuery(["blogs"],() => axios.get('https://ec-cycle-parts.onrender.com/blogs'));
 
     if(isLoading){
         return <Loading/>

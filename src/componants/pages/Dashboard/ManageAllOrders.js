@@ -9,7 +9,7 @@ const MyOrder = () => {
 
     const [deleteOrder, setDeleteOrder] = useState(null);    
 
-    const { isLoading, error, data } = useQuery(["orders"], () => axios.get('https://floating-dusk-82041.herokuapp.com/allorders')
+    const { isLoading, error, data } = useQuery(["orders"], () => axios.get('https://ec-cycle-parts.onrender.com/allorders')
     )
 
     const orders = data?.data;   

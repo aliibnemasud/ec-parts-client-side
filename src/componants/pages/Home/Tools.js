@@ -12,8 +12,8 @@ const Tools = () => {
 
     // Using react Query
 
-    // const loadTools = () => axios.get('https://floating-dusk-82041.herokuapp.com/tools');
-    const { isLoading, data } = useQuery(["tools"], () => axios.get('https://floating-dusk-82041.herokuapp.com/tools'));
+    // const loadTools = () => axios.get('https://ec-cycle-parts.onrender.com/tools');
+    const { isLoading, data } = useQuery(["tools"], () => axios.get('https://ec-cycle-parts.onrender.com/tools'));
         
     if (isLoading) {
         return <Loading />

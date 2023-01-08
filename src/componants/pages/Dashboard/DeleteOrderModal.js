@@ -5,7 +5,7 @@ const DeleteOrderModal = ({deleteOrder}) => {
     const {_id, name, toatlPrice, quantity} = deleteOrder; 
 
     const handleDelete = id =>{
-        const url = `https://floating-dusk-82041.herokuapp.com/orders/${id}`;
+        const url = `https://ec-cycle-parts.onrender.com/orders/${id}`;
         fetch(url, {
             method: 'DELETE'
         })

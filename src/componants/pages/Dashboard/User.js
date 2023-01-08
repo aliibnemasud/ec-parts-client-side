@@ -4,7 +4,7 @@ const User = ({ user, index, setDeleteUser}) => {
     const {_id, email, role } = user;
 
     const makeAdmin = () => {
-        fetch(`https://floating-dusk-82041.herokuapp.com/user/admin/${email}`, {
+        fetch(`https://ec-cycle-parts.onrender.com/user/admin/${email}`, {
             method: 'PUT'
         })
         .then(res => res.json())

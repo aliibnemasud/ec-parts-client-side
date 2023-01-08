@@ -9,7 +9,7 @@ const ManageUser = () => {
     const [deleteUser, setDeleteUser] = useState(null)
 
     const { isLoading, error, data: users } = useQuery(['users'], ()=>
-    fetch('https://floating-dusk-82041.herokuapp.com/users')
+    fetch('https://ec-cycle-parts.onrender.com/users')
     .then(rs => rs.json())    
     )
 

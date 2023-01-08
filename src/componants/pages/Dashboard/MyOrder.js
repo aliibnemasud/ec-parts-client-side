@@ -15,7 +15,7 @@ const MyOrder = () => {
     const navigate = useNavigate();   
 
     const { isLoading, error, data: orders } = useQuery(['orders'], () =>
-        fetch(`https://floating-dusk-82041.herokuapp.com/orders?email=${user?.email}`, {
+        fetch(`https://ec-cycle-parts.onrender.com/orders?email=${user?.email}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
@@ -31,7 +31,7 @@ const MyOrder = () => {
 
     console.log(sendToken)
 
-    const {isLoading, data: orders} = useQuery(["myOrders"], () => axios.get(`https://floating-dusk-82041.herokuapp.com/orders?email=${user?.email}`, sendToken));
+    const {isLoading, data: orders} = useQuery(["myOrders"], () => axios.get(`https://ec-cycle-parts.onrender.com/orders?email=${user?.email}`, sendToken));
     */
 
     if(isLoading){

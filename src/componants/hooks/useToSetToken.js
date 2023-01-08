@@ -8,7 +8,7 @@ const useToSetToken = user => {
 
         const email = user.user.email;
         
-        fetch ('https://floating-dusk-82041.herokuapp.com/login', {
+        fetch ('https://ec-cycle-parts.onrender.com/login', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

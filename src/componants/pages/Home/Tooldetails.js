@@ -15,7 +15,7 @@ const Tooldetails = () => {
     const { name, img, desc, price, stock } = tools;
 
     useEffect(() => {
-        const url = `https://floating-dusk-82041.herokuapp.com/tools/${toolsid}`;
+        const url = `https://ec-cycle-parts.onrender.com/tools/${toolsid}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setTools(data))
@@ -52,7 +52,7 @@ const Tooldetails = () => {
             userName: user.displayName            
         }
 
-        fetch('https://floating-dusk-82041.herokuapp.com/orders', {
+        fetch('https://ec-cycle-parts.onrender.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -5,14 +5,14 @@ const DeleteUser = ({deleteUser}) => {
 
     const [user, setUser] = useState('');    
     useEffect(() =>{
-        fetch(`https://floating-dusk-82041.herokuapp.com/users/${deleteUser}`)
+        fetch(`https://ec-cycle-parts.onrender.com/users/${deleteUser}`)
         .then(res => res.json())
         .then(data => setUser(data))
     },[])
     
     
     const handleDelete = id =>{
-        const url = `https://floating-dusk-82041.herokuapp.com/users/${id}`;
+        const url = `https://ec-cycle-parts.onrender.com/users/${id}`;
         fetch(url, {
             method: 'DELETE'
         })

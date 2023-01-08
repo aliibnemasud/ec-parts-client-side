@@ -25,7 +25,7 @@ const AddAProduct = () => {
             desc: toolsDesc,
             img: image
         }
-        fetch('https://floating-dusk-82041.herokuapp.com/tools', {
+        fetch('https://ec-cycle-parts.onrender.com/tools', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

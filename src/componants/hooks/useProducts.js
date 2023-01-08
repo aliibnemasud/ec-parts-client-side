@@ -5,7 +5,7 @@ const useProducts = () => {
     const [tools, setTools] = useState([]);
     
     useEffect(()=> {
-        fetch('https://floating-dusk-82041.herokuapp.com/tools')
+        fetch('https://ec-cycle-parts.onrender.com/tools')
         .then(res => res.json())
         .then(data => setTools(data))
     }, [])

@@ -13,7 +13,7 @@ const Payment = () => {
     const { name, toatlPrice, quantity } = order;
 
     useEffect(() => {
-        const url = `https://floating-dusk-82041.herokuapp.com/order/${orderid}`;
+        const url = `https://ec-cycle-parts.onrender.com/order/${orderid}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setOrder(data))

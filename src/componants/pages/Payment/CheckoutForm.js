@@ -12,7 +12,7 @@ const CheckoutForm = ({order}) => {
 
   useEffect(()=>{
   if(toatlPrice){
-    fetch('https://floating-dusk-82041.herokuapp.com/create-payment-intent', {
+    fetch('https://ec-cycle-parts.onrender.com/create-payment-intent', {
       method: 'POST',
       headers:{
         'content-type' : 'application/json'
@@ -83,7 +83,7 @@ const CheckoutForm = ({order}) => {
 
 
       // send the data to database
-      fetch(`https://floating-dusk-82041.herokuapp.com/order/${_id}`, {
+      fetch(`https://ec-cycle-parts.onrender.com/order/${_id}`, {
         method: 'PATCH',
         headers:{
           'content-type': 'application/json'

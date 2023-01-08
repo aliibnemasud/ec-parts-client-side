@@ -8,7 +8,7 @@ const useAdmin = user => {
       const email = user?.email;
 
       if(email){
-          fetch(`https://floating-dusk-82041.herokuapp.com/user/admin/${email}`, {
+          fetch(`https://ec-cycle-parts.onrender.com/user/admin/${email}`, {
               method: 'GET',
               headers:{
                 'content-type': 'application/json'

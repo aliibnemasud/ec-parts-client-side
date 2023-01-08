@@ -25,7 +25,7 @@ const MyReview = () => {
             img: user.photoURL
         }
 
-        fetch('https://floating-dusk-82041.herokuapp.com/review', {
+        fetch('https://ec-cycle-parts.onrender.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

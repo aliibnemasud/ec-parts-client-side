@@ -12,7 +12,7 @@ import Loading from '../Shared/Loading/Loading';
 
 const Reviews = () => {
 
-    const {isLoading, data} = useQuery(["reviews"],() => axios.get('https://floating-dusk-82041.herokuapp.com/tools'));   
+    const {isLoading, data} = useQuery(["reviews"],() => axios.get('https://ec-cycle-parts.onrender.com/tools'));   
 
     if (isLoading) {
         return <Loading />
