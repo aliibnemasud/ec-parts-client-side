@@ -2,7 +2,7 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 
 const CheckoutForm = ({order}) => {
-  const {_id, toatlPrice, userName, email} = order;
+  const {_id, totalPrice, userName, email} = order;
   const stripe = useStripe();
   const elements = useElements();
   const [cardEroor, setCardEroor] = useState('');
@@ -11,23 +11,22 @@ const CheckoutForm = ({order}) => {
   const [success, setSuccess] = useState('');
 
   useEffect(()=>{
-  if(toatlPrice){
+  if(totalPrice){
     fetch('https://ec-cycle-parts.onrender.com/create-payment-intent', {
       method: 'POST',
       headers:{
         'content-type' : 'application/json'
       },      
-      body: JSON.stringify({toatlPrice}),
+      body: JSON.stringify({totalPrice}),
     })
     .then(res => res.json())
     .then(data => {
       if(data?.clientSecret){
         setClientSecret(data.clientSecret)
-
       }
     })
   }
-  }, [toatlPrice])
+  }, [totalPrice])
 
   const handleSubmit = async (event) => {
     event.preventDefault()    
@@ -78,7 +77,7 @@ const CheckoutForm = ({order}) => {
       const payment = {
         orderId: _id,
         transactionId: paymentIntent.id,
-        amountTotal: toatlPrice,  
+        amountTotal: totalPrice,
       }
 
 
