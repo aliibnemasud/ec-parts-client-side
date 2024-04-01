@@ -10,7 +10,7 @@ const Tool = ({tool}) => {
     }
     return (
         <div className="card card-side bg-base-100 shadow-xl">
-            <figure><img src={tool.img} className="ml-4 w-auto" /></figure>
+            <figure><img src={tool.img} className="ml-4 w-auto" alt='tools' /></figure>
             <div className="card-body">
                 <h2 className="card-title uppercase">{tool?.name}</h2>
                 <p>Description: {tool?.desc}</p>

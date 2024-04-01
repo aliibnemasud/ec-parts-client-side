@@ -27,10 +27,8 @@ const Tooldetails = () => {
     const [qtnError, setQtnError] = useState('')
 
     if (loading) {
-        return <Loading></Loading>
+        return <Loading />
     }
-    
-
     const handleQualtity = e => {
         const quantity = parseInt(e.target.value);        
         setquantity (quantity);        
@@ -47,7 +45,7 @@ const Tooldetails = () => {
             name: name,
             quantity: quantity,
             price: price,
-            toatlPrice: totalPrice,
+            totalPrice: totalPrice,
             email: user.email,
             userName: user.displayName            
         }

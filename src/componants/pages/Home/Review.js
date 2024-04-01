@@ -6,7 +6,7 @@ const Review = ({review}) => {
         <div className="flex justify-between items-center p-10 shadow-xl rounded-lg bg-white">
             <div className="avatar mr-5">
                 <div className="w-24 h-24 rounded-full">
-                    <img src={img} />
+                    <img src={img} alt='client'/>
                 </div>
             </div>
 

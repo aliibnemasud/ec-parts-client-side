@@ -10,10 +10,8 @@ const Dashboard = () => {
     const [admin] = useAdmin(user);
 
     if (loading) {
-        return <Loading></Loading>
-    }
-
-    console.log(admin)
+        return <Loading />
+    }    
 
     return (
         <div className='max-w-7xl mx-auto'>
@@ -21,13 +19,13 @@ const Dashboard = () => {
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col">
                     {/* <!-- Page content here --> */}
-                    <Outlet></Outlet>
+                    <Outlet/>
 
                     <label for="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
                 </div>
                 <div className="drawer-side  bg-red-500">
-                    <label for="my-drawer-2" className="drawer-overlay"></label>
+                    <label for="my-drawer-2" className="drawer-overlay" />
                     <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
                         {/* <!-- Sidebar content here --> */}
 

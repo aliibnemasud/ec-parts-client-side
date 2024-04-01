@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Order = ({order, setDeleteOrder, index}) => {
-    const {_id, name, price, toatlPrice, quantity, paid} = order;
+    const {_id, name, price, totalPrice, quantity, paid} = order;
     const navigate = useNavigate();
 
     const makePayment = (orderid) => {
@@ -15,7 +15,7 @@ const Order = ({order, setDeleteOrder, index}) => {
             <td> {name} </td>
             <td>$ {price}</td>
             <td>{quantity}</td>            
-            <td>$ {toatlPrice}</td>            
+            <td>$ {totalPrice}</td>            
             <td>
                 {
                   paid ?<button className='btn btn-sm btn-success'>Paid</button> : <button className='btn btn-sm btn-warning'>Unpaid</button> 

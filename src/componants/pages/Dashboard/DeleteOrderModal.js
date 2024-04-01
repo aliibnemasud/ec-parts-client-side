@@ -12,7 +12,7 @@ const DeleteOrderModal = ({deleteOrder}) => {
         .then(res => res.json())
         .then(data => {
             toast.success(`${name} has been deleted.`)
-            console.log(data)
+            window.location.reload();
         })
     }
 
