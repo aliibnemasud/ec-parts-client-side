@@ -39,7 +39,7 @@ const MyOrder = () => {
                     </thead>
                     <tbody>
                         { orders &&
-                            orders.map((order, index) => <Order 
+                            orders?.map((order, index) => <Order 
                                 order={order}
                                 index={index}
                                 setDeleteOrder={setDeleteOrder}

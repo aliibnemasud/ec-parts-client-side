@@ -26,12 +26,12 @@ const Manageproduct = () => {
 						</tr>
 					</thead>
 					<tbody>
-						{tools.map((tool, index) => (
+						{tools?.map((tool, index) => (
 							<AllProducts
 								tool={tool}
 								index={index}
 								setDeleteTools={setDeleteTools}
-							></AllProducts>
+							/>
 						))}
 					</tbody>
 				</table>

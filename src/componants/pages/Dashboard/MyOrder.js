@@ -13,7 +13,6 @@ const MyOrder = () => {
 	const [user] = useAuthState(auth);
 	const [deleteOrder, setDeleteOrder] = useState(null);
 	const navigate = useNavigate();
-
 	const {
 		isLoading,
 		error,
@@ -26,29 +25,17 @@ const MyOrder = () => {
 				authorization: `Bearer ${localStorage.getItem("accessToken")}`,
 			},
 		}).then((res) => res.json()),
-	);
-
-	/* const sendToken = {
-        authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    }
-    console.log(sendToken)
-
-    const {isLoading, data: orders} = useQuery(["myOrders"], () => axios.get(`https://ec-cycle-parts.onrender.com/orders?email=${user?.email}`, sendToken));
-    */
-
+	);	
 	if (isLoading) {
 		return <Loading />;
 	}
-
 	let myOrder = [];
-
 	if (!token) {
 		signOut(auth);
 		navigate("/login");
 	} else if (token) {
 		myOrder = orders;
 	}
-
 	return (
 		<div>
 			<h1 className="text-3xl uppercase my-4 font-bold">My Orders</h1>
@@ -67,7 +54,7 @@ const MyOrder = () => {
 						</tr>
 					</thead>
 					<tbody>
-						{myOrder.map((order, index) => (
+						{myOrder?.map((order, index) => (
 							<Order
 								order={order}
 								index={index}

@@ -14,7 +14,7 @@ const ManageUser = () => {
     )
 
     if(isLoading){
-        return <Loading></Loading>
+        return <Loading />
     }
 
     return (
@@ -35,7 +35,7 @@ const ManageUser = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) => <User
+                            users?.map((user, index) => <User
                                 user={user}
                                 index={index}
                                 setDeleteUser={setDeleteUser}                                
